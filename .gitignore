@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.coverage
+.cache
+.pytest_cache/
+.hypothesis/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.dev
+.env.test
+.env.production
+.env.staging
+
+# Backend specific
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.venv/
+backend/venv/
+backend/env/
+
+# Frontend specific (if exists later)
+node_modules/
+dist/
+build/
+.nyc_output/
+coverage/
+.nyc-output/
+
+# Database
+*.db
+*.db-journal
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.cov/
