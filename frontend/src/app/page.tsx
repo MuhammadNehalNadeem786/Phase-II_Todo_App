@@ -47,8 +47,8 @@ export default function HomePage() {
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4 pt-20">
         <div className="max-w-4xl">
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 leading-tight">
-            Manage Your Tasks <br />
-            <span className="text-zinc-500">Simply & Efficiently</span>
+            Align Your Tasks <br />
+            <span className="text-zinc-500">Empower Your Productivity</span>
           </h1>
           
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
