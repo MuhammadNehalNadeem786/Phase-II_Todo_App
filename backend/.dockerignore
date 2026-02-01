@@ -1,0 +1,14 @@
+# .dockerignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.env
+.env.*
+.git
+.gitignore
+alembic/versions/__pycache__/
+logs/
+pytest_cache/

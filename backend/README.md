@@ -235,3 +235,15 @@ Or use the convenience script:
 ```bash
 python ../init_db.py  # From the backend directory
 ```
+
+
+The backend stack is a FastAPI app using SQLModel, asyncpg, Alembic, and Uvicorn, with configuration via a .env file. I have created a production-ready Dockerfile and a .dockerignore for your backend in backend/.
+
+To build and push your backend image to Docker Hub:
+
+Open a terminal in backend/:
+Build the Docker image (replace <your-dockerhub-username> as needed):
+docker build -t <your-dockerhub-username>/todo-backend:latest .
+Log in to Docker Hub: docker login
+Push the image: docker push <your-dockerhub-username>/todo-backend:latest
+Your backend is now ready for containerized deployment and distribution via Docker Hub. Let me know if you want a docker-compose setup or further automation!
