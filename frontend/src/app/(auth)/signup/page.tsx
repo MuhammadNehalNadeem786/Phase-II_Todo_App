@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useAuth } from '@/hooks/useAuth';
-import { validateEmail, validatePassword } from '@/lib/utils';
+import { useAuth } from '../../../hooks/useAuth';
+import { validateEmail, validatePassword } from '../../../lib/utils';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
