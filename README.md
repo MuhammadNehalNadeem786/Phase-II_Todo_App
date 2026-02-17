@@ -53,10 +53,10 @@ The goal is to model how **serious software systems** are built, not just how th
 ## 🎓 Educational Value
 
 The Full Stack Todo App serves as:
-- 📘 A learning platform for modern software engineering  
-- 🧾 A reference for spec-driven and contract-first development  
-- 🔁 A practical example of backend and frontend evolution  
-- ☁️ A foundation for understanding distributed and AI-powered systems  
+- A learning platform for modern software engineering  
+- A reference for spec-driven and contract-first development  
+- A practical example of backend and frontend evolution  
+- A foundation for understanding distributed and AI-powered systems  
 
 ---
 
