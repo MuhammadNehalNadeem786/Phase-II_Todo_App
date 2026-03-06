@@ -8,15 +8,11 @@ import { useAuth } from '../../hooks/useAuth';
 
 export default function DashboardPage() {
   const router = useRouter();
-
-  // ✅ Hook called ONCE at top level
   const { user, isAuthenticated, isLoading, logout } = useAuth();
 
-  // Redirect if not authenticated
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
       router.push('/login');
-      // 🔥 clear auth storage explicitly
       localStorage.removeItem('jwt_token');
       localStorage.removeItem('auth_user');
 
@@ -54,8 +50,6 @@ export default function DashboardPage() {
 
           <div className="flex items-center space-x-4">
             <span className="text-[#a1a1aa]">Welcome, {user?.username}</span>
-
-            {/* ✅ Correct logout usage */}
             <button
               onClick={async () => {
                 await logout();

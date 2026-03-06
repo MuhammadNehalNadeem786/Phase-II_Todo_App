@@ -1,4 +1,3 @@
-# src/api/routes/auth.py
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
@@ -15,7 +14,6 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 router = APIRouter()
 
-# -------------------- TOKEN --------------------
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     expire = datetime.utcnow() + (
@@ -28,7 +26,6 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
         algorithm=ALGORITHM
     )
 
-# -------------------- DB --------------------
 def get_db():
     db = database.SessionLocal()
     try:
@@ -36,7 +33,6 @@ def get_db():
     finally:
         db.close()
 
-# -------------------- SIGNUP --------------------
 @router.post("/signup", response_model=UserRead)
 def signup(user: UserCreate, db: Session = Depends(get_db)):
     if user_service.get_user_by_username(db, user.username):
@@ -54,7 +50,6 @@ def signup(user: UserCreate, db: Session = Depends(get_db)):
     db_user = user_service.create_user(db, user)
     return db_user
 
-# -------------------- LOGIN (EMAIL) --------------------
 @router.post("/login")
 def login(data: UserLogin, db: Session = Depends(get_db)):
     user = user_service.get_user_by_email(db, data.email)

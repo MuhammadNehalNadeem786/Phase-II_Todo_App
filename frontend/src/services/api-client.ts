@@ -5,14 +5,13 @@ const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: API_BASE_URL, // ✅ IMPORTANT FIX
+  baseURL: API_BASE_URL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// ✅ Add JWT to every request
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('jwt_token');
@@ -24,7 +23,6 @@ apiClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// ✅ Handle auth errors
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -39,7 +37,6 @@ apiClient.interceptors.response.use(
   }
 );
 
-// ✅ Export helpers
 export const apiClientWithRetry = {
   get: <T>(url: string, config?: any) =>
     apiClient.get<T>(url, config).then(res => res.data),

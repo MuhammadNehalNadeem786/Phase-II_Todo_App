@@ -1,4 +1,3 @@
-# src/schemas/user.py
 from pydantic import BaseModel, EmailStr
 
 class UserBase(BaseModel):
@@ -14,7 +13,6 @@ class UserRead(UserBase):
     class Config:
         from_attributes = True
 
-# ✅ EMAIL-BASED LOGIN
 class UserLogin(BaseModel):
     email: EmailStr
     password: str

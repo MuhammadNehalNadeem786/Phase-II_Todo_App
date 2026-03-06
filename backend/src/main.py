@@ -14,10 +14,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ✅ ADD CORS HERE
+# Build CORS origins list, filtering out placeholder values
+cors_origins = []
+for origin in [settings.FRONTEND_URL, settings.FRONTEND_URL2]:
+    if origin and origin not in ["your-frontend-key", ""]:
+        cors_origins.append(origin)
+
+# If no valid origins, allow all for development
+if not cors_origins:
+    cors_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://localhost:3000",
         settings.FRONTEND_URL, settings.FRONTEND_URL2, # Next.js frontend
     ],
     allow_credentials=True,

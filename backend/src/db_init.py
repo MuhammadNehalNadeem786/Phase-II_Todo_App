@@ -5,14 +5,16 @@ from sqlmodel import SQLModel
 from sqlalchemy.ext.asyncio import create_async_engine
 from src.models.task import Task  # Import all models to register them
 from src.config import settings
+from src.models.database import get_async_url
 
 
 async def create_tables():
     """Create all tables in the database."""
     print("Connecting to database...")
 
-    # Create async engine
-    engine = create_async_engine(str(settings.DATABASE_URL))
+    # Create async engine with proper driver
+    async_url = get_async_url(settings.DATABASE_URL)
+    engine = create_async_engine(async_url)
 
     try:
         print("Creating tables...")
